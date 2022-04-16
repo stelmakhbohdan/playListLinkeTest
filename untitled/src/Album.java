@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 
 public class Album {
     private String name;
@@ -20,7 +21,7 @@ public class Album {
         return false;
     }
 
-    public boolean addToPlayList(int trackNumber, LinkedList<Song> playlist){
+    public boolean addToPlayList(int trackNumber, List<Song> playlist){
         int index = trackNumber-1;
         if ((index>=0)&&(index<=this.songs.size())){
             playlist.add(this.songs.get(index));
@@ -30,7 +31,7 @@ public class Album {
         return false;
     }
 
-    public boolean addToPlayList(String title,LinkedList<Song> playList){
+    public boolean addToPlayList(String title,List<Song> playList){
         Song checkedSong = findSong(title);
         if (checkedSong!=null){
             playList.add(checkedSong);
@@ -40,15 +41,6 @@ public class Album {
         return false;
 
     }
-
-
-
-
-
-
-
-
-
 
 
     private Song findSong(String title){
